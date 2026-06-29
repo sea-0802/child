@@ -44,7 +44,7 @@
             <span>🌟</span> 我的學習小天地
         </h1>
 
-        <!-- 1. 寵物養成區 (在上，對話框調整至右側並顯眼化) -->
+        <!-- 1. 寵物養成區 -->
         <div class="flex flex-col items-center w-full mb-2 relative">
             
             <!-- 橫向排列容器：左側為精靈圖片，右側為對話泡泡 -->
@@ -74,7 +74,7 @@
 
             <!-- 動態計數器 (精靈下方) - 數字特大化 -->
             <div id="dynamic-counter-container" class="w-full text-xl font-bold text-indigo-900 my-2">
-                <!-- 由 JavaScript 動態渲染，數字使用大字體 -->
+                <!-- 由 JavaScript 動態渲染 -->
             </div>
 
         </div>
@@ -94,10 +94,10 @@
             </button>
         </div>
 
-        <!-- 2. 下方主要操作區：切換標籤與輸入內容並排 (完美對齊) -->
+        <!-- 2. 下方主要操作區：切換標籤與輸入內容並排 -->
         <div class="w-full flex flex-col sm:flex-row items-stretch gap-4 mt-2">
             
-            <!-- 左側：直立式模式切換標籤 (頂部精確對齊輸入框，寬度固定) -->
+            <!-- 左側：直立式模式切換標籤 -->
             <div class="flex sm:flex-col gap-2 w-full sm:w-36 shrink-0">
                 <button id="tab-diary" onclick="triggerTabSwitch('diary')" class="w-full sm:w-36 py-3 px-4 rounded-2xl font-black text-base transition-all duration-150 flex items-center justify-center sm:justify-start gap-2 border-2 border-amber-400 bg-[#FFD255] text-slate-700 shadow-sm">
                     <span>📝</span> 寫日記
@@ -110,10 +110,10 @@
             <!-- 右側：內容輸入與按鈕區 -->
             <div class="flex-grow w-full flex flex-col">
 
-                <!-- 輸入卡片主體 (無背景嵌套，右上角印章放大) -->
+                <!-- 輸入卡片主體 -->
                 <div class="w-full relative min-h-[220px] flex flex-col justify-between mb-6">
                     
-                    <!-- 已完成大印章 - 專屬紅色顯眼系，字體放大為 text-3xl，新增 pointer-events-none 防止遮擋點擊 -->
+                    <!-- 已完成大印章 -->
                     <div id="completed-stamp" class="absolute -top-5 right-2 z-10 stamp-animation border-4 border-red-500 text-red-500 font-black px-5 py-2 rounded-2xl text-3xl uppercase tracking-wider transform -rotate-12 bg-white shadow-md flex items-center gap-1.5 pointer-events-none hidden">
                         <i class="fa-solid fa-circle-check"></i>
                         <span>已完成</span>
@@ -125,12 +125,12 @@
                         <p class="text-slate-600 font-bold text-sm">請等一下喔...</p>
                     </div>
 
-                    <!-- 分頁1: 日記本輸入框 (黃色粗邊框) -->
+                    <!-- 分頁1: 日記本輸入框 -->
                     <div id="panel-diary" class="w-full">
                         <textarea id="diary-content" class="w-full p-4 border-4 border-amber-400 focus:border-amber-500 rounded-3xl focus:outline-none text-lg text-slate-700 leading-relaxed font-bold placeholder-slate-300 min-h-[160px]" placeholder="寫下今天的好玩事情（可以注音輸入喔！）"></textarea>
                     </div>
 
-                    <!-- 分頁2: 英文本輸入框 (藍色粗邊框，已移去頂部容易與已完成印章重疊的按鈕) -->
+                    <!-- 分頁2: 英文本輸入框 -->
                     <div id="panel-english" class="w-full space-y-3 hidden text-left">
                         <div class="px-1">
                             <span class="text-slate-500 text-xs font-bold">填入英文單字或句子：</span>
@@ -143,7 +143,7 @@
 
                 </div>
 
-                <!-- 控制按鈕組 (大藥丸儲存鈕 + 英文複習鈕 + 刪除按鈕並排) -->
+                <!-- 控制按鈕組 (儲存鈕 + 英文複習鈕 + 刪除按鈕) -->
                 <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-3">
                     
                     <button onclick="saveCurrentData()" class="w-48 py-3.5 rounded-full font-black text-white text-lg flex items-center justify-center gap-2 btn-orange-gradient transition-all shrink-0">
@@ -151,13 +151,13 @@
                         <span id="btn-save-text">儲存</span>
                     </button>
 
-                    <!-- 📚 看背過的英文按鈕 - 已依照黃色箭頭移動至下方控制列，只有在「背英文」Tab 會顯示 -->
+                    <!-- 📚 看背過的英文按鈕 -->
                     <button id="btn-english-list" onclick="openEnglishListModal()" class="w-44 py-3.5 rounded-full font-black bg-blue-500 hover:bg-blue-600 text-white text-base flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 hidden">
                         <i class="fa-solid fa-book-open"></i>
                         <span>背過的英文</span>
                     </button>
 
-                    <!-- 刪除按鈕 - 精簡字樣，且完美與儲存鈕並排 -->
+                    <!-- 刪除按鈕 -->
                     <button id="btn-delete" onclick="deleteTodayData()" class="w-40 py-3.5 rounded-full font-black bg-slate-300/80 hover:bg-slate-400/80 text-slate-700 text-base flex items-center justify-center gap-2 transition-all shadow-sm hidden shrink-0">
                         <i class="fa-solid fa-trash-can"></i>
                         <span>刪除記錄</span>
@@ -182,7 +182,7 @@
         </div>
     </div>
 
-    <!-- ⚠️ 貼心未儲存防呆警告視窗 (可愛插畫風格) -->
+    <!-- ⚠️ 貼心未儲存防呆警告視窗 -->
     <div id="unsaved-confirm-modal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4 hidden">
         <div class="bg-white border-4 border-amber-400 rounded-3xl p-6 max-w-sm w-full shadow-lg text-center">
             <div class="text-5xl mb-4">✍️</div>
@@ -273,6 +273,9 @@
         let allEnglishList = []; 
         let currentStats = { diaryCount: 0, englishCount: 0, totalDays: 0 }; 
         
+        // 💡 全域寵物狀態暫存器，確保切換日期等「免刷新 API 請求」發生時，寵物圖案（A）不會被重設為蛋（B）
+        let currentPet = { fileId: "DEFAULT_EGG", petTalk: "加油！快把我孵出來吧！" };
+
         // 用於攔截與延遲執行的暫存狀態
         let pendingAction = null; 
         
@@ -286,7 +289,8 @@
         window.onload = function() {
             const todayStr = getTodayString();
             document.getElementById('current-date').value = todayStr;
-            loadDataAndStats();
+            // 首次開啟載入全數據 (包含當日內容與全局統計、單字清單)
+            loadDataAndStats(true);
         };
 
         function getTodayString() {
@@ -432,16 +436,17 @@
         }
 
         function onDateChanged() {
-            loadDataAndStats();
+            // 💡 瀏覽換日：只載入目標日期的日記/英文，跳過耗時的全域重新計算！極速加倍！
+            loadDataAndStats(false);
         }
 
-        // --- 語音念讀功能 (TTS) ---
+        // --- 語音念讀功能 (TTS) - 💡 調整中文語速為較輕快且生動的 1.15 倍 ---
         function speakText(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel(); // 停止當前所有正在念讀的語音
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'zh-TW'; // 指定台灣中文
-                utterance.rate = 1.0;     
+                utterance.lang = 'zh-TW'; 
+                utterance.rate = 1.15; // 💡 語速微調加快    
                 utterance.pitch = 1.25;   
                 window.speechSynthesis.speak(utterance);
             } else {
@@ -449,13 +454,13 @@
             }
         }
 
-        // --- 英文專用發音唸讀功能 (TTS) ---
+        // --- 英文專用發音唸讀功能 (TTS) - 💡 調整英文語速為最流暢自然的 1.02 倍 ---
         function speakEnglish(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'en-US'; // 美式英語發音
-                utterance.rate = 0.85;    // 放慢語速，方便低年級小朋友聽得清楚
+                utterance.rate = 1.02; // 💡 語速微調加快，不再慢吞吞   
                 utterance.pitch = 1.1;    
                 window.speechSynthesis.speak(utterance);
             } else {
@@ -464,43 +469,57 @@
         }
 
         // --- 雲端載入流 ---
-        async function loadDataAndStats() {
+        async function loadDataAndStats(needFullStats = false) {
             const selectedDate = document.getElementById('current-date').value;
             if (!selectedDate) return;
 
-            showLoading(true);
+            // 💡 效能與感官優化：如果是單純換日，不要向用戶顯示 PET 的載入遮罩，防止精靈轉圈圈閃爍
+            const isPureDateChange = !needFullStats && !isSavingAction && currentStats.totalDays > 0;
+            showLoading(true, isPureDateChange);
 
             // 備份載入前的舊不重複日記天數
             const oldTotalDays = currentStats.totalDays || 0;
 
             if (GAS_WEB_APP_URL) {
                 try {
-                    const [readResponse, statsResponse] = await Promise.all([
-                        fetchApi({ action: "read", date: selectedDate }),
-                        fetchApi({ action: "getStats" })
-                    ]);
+                    let promises = [];
+                    // 永遠需要讀取當前日期的日記與英文內容
+                    promises.push(fetchApi({ action: "read", date: selectedDate }));
+                    
+                    // 只有在「全新初始化」、「儲存成功」或「強迫刷新(isSavingAction)」時才向後端要全局統計，其餘純換日翻頁不重撈，大提速！
+                    if (isSavingAction || oldTotalDays === 0) {
+                        promises.push(fetchApi({ action: "getStats" }));
+                    }
 
-                    if (readResponse.success) {
+                    const results = await Promise.all(promises);
+                    const readResponse = results[0];
+                    const statsResponse = results[1] || null;
+
+                    if (readResponse && readResponse.success) {
                         cachedData = readResponse.data;
                         cachedData.date = selectedDate; // 綁定日期做防呆備份
                     } else {
                         cachedData = { diary: "", english: { text: "", translation: "" }, date: selectedDate };
                     }
 
-                    if (statsResponse.success) {
+                    if (statsResponse && statsResponse.success) {
                         currentStats = statsResponse.stats;
                         
                         const newTotalDays = statsResponse.stats.totalDays || 0;
-                        const activePet = statsResponse.activePet || {};
-                        const milestoneTarget = Number(activePet.targetDays || 0);
+                        // 儲存最新的寵物資料到全域狀態
+                        currentPet = statsResponse.activePet || { fileId: "DEFAULT_EGG", petTalk: "加油！快把我孵出來吧！" };
+                        const milestoneTarget = Number(currentPet.targetDays || 0);
 
-                        updateStatsAndPet(statsResponse.stats, activePet);
+                        updateStatsAndPet(statsResponse.stats, currentPet);
                         allEnglishList = statsResponse.allEnglish || [];
 
                         // 語音讀報：當由儲存觸發，且天數剛好突破新里程碑天數 (首次達成)
                         if (isSavingAction && milestoneTarget > 0 && oldTotalDays < milestoneTarget && newTotalDays >= milestoneTarget) {
-                            speakText(activePet.petTalk);
+                            speakText(currentPet.petTalk);
                         }
+                    } else {
+                        // 💡 完美狀態保持：換日無 statsResponse 時，安全地使用全域 currentPet 來渲染圖片，保證圖片 A 絕不會變回 B (預設蛋)
+                        updateStatsAndPet(currentStats, currentPet);
                     }
                 } catch (error) {
                     console.error("雲端讀取失敗:", error);
@@ -522,8 +541,8 @@
             const selectedDate = document.getElementById('current-date').value;
             cachedData = { diary: "", english: { text: "", translation: "" }, date: selectedDate };
             currentStats = { diaryCount: 0, englishCount: 0, totalDays: 0 };
-            const defaultPet = { fileId: "DEFAULT_EGG", petTalk: "加油！快把我孵出來吧！" };
-            updateStatsAndPet(currentStats, defaultPet);
+            currentPet = { fileId: "DEFAULT_EGG", petTalk: "加油！快把我孵出來吧！" };
+            updateStatsAndPet(currentStats, currentPet);
             allEnglishList = [];
         }
 
@@ -568,6 +587,7 @@
             }
         }
 
+        // 寵物渲染 (💡 新增快取比對機制，避免重複設定 .src 引起圖片閃爍重讀)
         function updateStatsAndPet(stats, activePet) {
             updateDynamicCounter();
 
@@ -576,13 +596,21 @@
             const petImgElement = document.getElementById('pet-image');
             const totalDays = Number(stats.totalDays || 0);
 
+            let targetSrc = "";
             if (totalDays === 0 || !activePet.fileId || activePet.fileId === "DEFAULT_EGG") {
-                petImgElement.src = defaultEggSvg;
+                targetSrc = defaultEggSvg;
             } else {
-                petImgElement.src = `https://lh3.googleusercontent.com/d/${activePet.fileId}`;
+                targetSrc = `https://lh3.googleusercontent.com/d/${activePet.fileId}`;
+            }
+
+            // 💡 關鍵效能優化：如果目標路徑與現有 src 已一致，拒絕重新設定 .src 以防止瀏覽器重新解碼產生閃爍
+            if (petImgElement.getAttribute('data-src') !== targetSrc) {
+                petImgElement.setAttribute('data-src', targetSrc);
+                petImgElement.src = targetSrc;
                 petImgElement.onerror = function() {
                     console.warn("Drive 圖片載入失敗，降級顯示蛋。");
                     petImgElement.src = defaultEggSvg;
+                    petImgElement.setAttribute('data-src', defaultEggSvg);
                 };
             }
         }
@@ -623,7 +651,7 @@
                         data: dataToSave
                     });
                     if (result.success) {
-                        // 💡 關鍵修正 1：儲存成功後，立即更新本機快取 cachedData，防止在重載完成前按換日誤跳出「等一下喔」警告
+                        // 儲存成功後，立即更新本機快取 cachedData，防止在重載完成前按換日誤跳出「等一下喔」警告
                         if (currentTab === 'diary') {
                             cachedData.diary = diaryInput;
                         } else {
@@ -634,6 +662,7 @@
                         
                         // 按下儲存時精靈立刻靜態變回小蛋，無任何動畫
                         document.getElementById('pet-image').src = defaultEggSvg;
+                        document.getElementById('pet-image').setAttribute('data-src', defaultEggSvg);
                         showModal('🎉 太棒了！', '', '🐥');
                     } else {
                         throw new Error(result.message);
@@ -695,7 +724,7 @@
                     topRow.className = "flex justify-between items-start gap-2";
                     
                     const englishText = document.createElement('span');
-                    // 💡 關鍵修正 4：英文單字使用藍色的補色—「橙橘色 (text-orange-500)」呈現，加粗特大，視覺極顯眼！
+                    // 英文單字使用藍色的補色—「橙橘色 (text-orange-500)」呈現，加粗特大，視覺極顯眼！
                     englishText.className = "text-xl font-black text-orange-500 break-all leading-tight";
                     englishText.innerText = item.english;
                     
@@ -738,33 +767,6 @@
             document.getElementById('english-list-modal').classList.remove('hidden');
         }
 
-        // 💡 宣告遺漏的語音函數，防止出現 ReferenceError 的全域崩潰 💡
-        function speakText(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); 
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'zh-TW'; 
-                utterance.rate = 1.0;     
-                utterance.pitch = 1.25;   
-                window.speechSynthesis.speak(utterance);
-            } else {
-                console.warn("此瀏覽器不支援語音合成技術。");
-            }
-        }
-
-        function speakEnglish(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US'; 
-                utterance.rate = 0.85;    
-                utterance.pitch = 1.1;    
-                window.speechSynthesis.speak(utterance);
-            } else {
-                console.warn("此瀏覽器不支援語音合成技術。");
-            }
-        }
-
         function closeEnglishListModal() {
             document.getElementById('english-list-modal').classList.add('hidden');
         }
@@ -795,13 +797,16 @@
             }
         }
 
-        // --- 輔劇 UI ---
-        function showLoading(isLoading) {
+        // --- 輔劇 UI (💡 優化：新增 isPureDateChange 參數，用來排除換日翻頁時 PET 精靈重新渲染轉圈圈) ---
+        function showLoading(isLoading, isPureDateChange = false) {
             const loadingMask = document.getElementById('content-loading');
             const petLoading = document.getElementById('pet-loading');
             if (isLoading) {
                 loadingMask.classList.remove('hidden');
-                petLoading.classList.remove('hidden');
+                // 💡 如果是單純換日，不要讓 PET 顯示載入轉圈，確保精靈安靜留在原地不閃爍
+                if (!isPureDateChange) {
+                    petLoading.classList.remove('hidden');
+                }
             } else {
                 loadingMask.classList.add('hidden');
                 petLoading.classList.add('hidden');
